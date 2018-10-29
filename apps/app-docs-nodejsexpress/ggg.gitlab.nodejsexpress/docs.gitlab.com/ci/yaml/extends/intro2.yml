@@ -1,0 +1,10 @@
+# This results in the following rspec job:
+
+rspec:
+  script: rake rspec
+  stage: test
+  only:
+    refs:
+      - branches
+    variables:
+      - $RSPEC

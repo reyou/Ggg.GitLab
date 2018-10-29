@@ -1,0 +1,9 @@
+# script is the only required keyword that a job needs. 
+# It's a shell script which is executed by the Runner. For example:
+job:
+  script: "bundle exec rspec"
+  
+job2:
+  script:
+    - uname -a
+    - bundle exec rspec

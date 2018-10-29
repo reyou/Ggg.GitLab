@@ -1,0 +1,30 @@
+# Job is going to be created only when pipeline has been scheduled or 
+# runs for a master branch, and only if kubernetes service is active 
+# in the project.
+
+job:
+  only:
+    refs:
+      - master
+      - schedules
+    kubernetes: active
+
+# Examples of using variables expressions:
+
+deploy:
+  script: cap staging deploy
+  only:
+    refs:
+      - branches
+    variables:
+      - $RELEASE == "staging"
+      - $STAGING
+
+# Another use case is exluding jobs depending on a commit message (added in 11.0):
+
+end-to-end:
+  script: rake test:end-to-end
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /skip-end-to-end-tests/
+

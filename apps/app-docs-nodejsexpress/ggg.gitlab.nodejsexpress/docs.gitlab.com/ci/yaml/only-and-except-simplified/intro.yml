@@ -1,0 +1,32 @@
+# In the example below, job will run only for refs 
+# that start with issue-, whereas all branches will be skipped:
+
+job:
+  # use regexp
+  only:
+    - /^issue-.*$/
+  # use special keyword
+  except:
+    - branches
+
+# In this example, job will run only for refs that are tagged, or 
+# if a build is explicitly requested via an API trigger 
+# or a Pipeline Schedule:
+
+job2:
+  # use special keywords
+  only:
+    - tags
+    - triggers
+    - schedules
+
+# The repository path can be used to have jobs executed only for 
+# the parent repository and not forks:
+# The example will run job for all branches on gitlab-org/gitlab-ce, except master.
+
+job3:
+  only:
+    - branches@gitlab-org/gitlab-ce
+  except:
+    - master@gitlab-org/gitlab-ce
+

@@ -1,0 +1,16 @@
+# https://docs.gitlab.com/ee/ci/yaml/README.html#pages
+# pages is a special job that is used to upload static content to 
+# GitLab that can be used to serve your website. It has a special 
+# syntax, so the two requirements below must be met:
+
+pages:
+  stage: deploy
+  script:
+    - mkdir .public
+    - cp -r * .public
+    - mv .public public
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
