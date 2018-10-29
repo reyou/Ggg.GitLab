@@ -59,8 +59,3 @@ typings/
 
 # next.js build output
 .next
-
-willReadIgnore/
-
-
-apps/app-docs-nodejsexpress/ggg\.gitlab\.nodejsexpress/gitlab\.git/
