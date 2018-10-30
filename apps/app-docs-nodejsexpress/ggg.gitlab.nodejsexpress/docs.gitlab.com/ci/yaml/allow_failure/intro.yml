@@ -1,0 +1,15 @@
+job1:
+  stage: test
+  script:
+    - execute_script_that_will_fail
+  allow_failure: true
+
+job2:
+  stage: test
+  script:
+    - execute_script_that_will_succeed
+
+job3:
+  stage: deploy
+  script:
+    - deploy_to_staging

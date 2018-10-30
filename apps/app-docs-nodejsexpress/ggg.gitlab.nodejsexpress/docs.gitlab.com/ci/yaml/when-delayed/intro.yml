@@ -1,0 +1,5 @@
+timed rollout 10%:
+  stage: deploy
+  script: echo 'Rolling out 10% ...'
+  when: delayed
+  start_in: 30 minutes

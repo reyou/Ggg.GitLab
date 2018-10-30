@@ -1,0 +1,30 @@
+# For example, to enable per-branch caching:
+
+cache:
+  key: "$CI_COMMIT_REF_SLUG"
+  paths:
+    - binaries/
+
+# If you use Windows Batch to run your shell scripts you need to replace $ with %:
+# normally below needs to be called "cache", but we cannot have duplicate
+# keys in YAML
+cache2:
+  key: "%CI_COMMIT_REF_SLUG%"
+  paths:
+    - binaries/
+
+# Set untracked: true to cache all files that are untracked in your Git repository:
+
+rspec:
+  script: test
+  cache:
+    untracked: true
+
+# Cache all Git untracked files and files in binaries:
+
+rspec2:
+  script: test
+  cache:
+    untracked: true
+    paths:
+      - binaries/

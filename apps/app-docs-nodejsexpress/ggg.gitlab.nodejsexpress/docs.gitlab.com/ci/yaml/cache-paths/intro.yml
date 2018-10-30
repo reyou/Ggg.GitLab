@@ -1,0 +1,20 @@
+rspec:
+  script: test
+  cache:
+    paths:
+      - binaries/*.apk
+      - .config
+
+# Locally defined cache overrides globally defined options. 
+# The following rspec2 job will cache only binaries/:
+
+cache:
+  paths:
+    - my/files
+
+rspec2:
+  script: test
+  cache:
+    key: rspec2
+    paths:
+      - binaries/

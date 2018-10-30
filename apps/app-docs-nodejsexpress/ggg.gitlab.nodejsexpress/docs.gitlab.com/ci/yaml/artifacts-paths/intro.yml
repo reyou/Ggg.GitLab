@@ -1,0 +1,31 @@
+artifacts:
+  paths:
+    - binaries/
+    - .config
+
+# To disable artifact passing, define the job with empty dependencies:
+
+job:
+  stage: build
+  script: make build
+  dependencies: []
+
+# You may want to create artifacts only for tagged releases to avoid 
+# filling the build server storage with temporary build artifacts.
+# Create artifacts only for tags (default-job will not create artifacts):
+
+default-job:
+  script:
+    - mvn test -U
+  except:
+    - tags
+
+release-job:
+  script:
+    - mvn package -U
+  artifacts:
+    paths:
+      - target/*.war
+  only:
+    - tags
+

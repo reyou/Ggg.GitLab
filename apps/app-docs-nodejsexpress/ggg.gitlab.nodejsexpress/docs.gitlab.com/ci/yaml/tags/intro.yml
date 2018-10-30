@@ -1,0 +1,23 @@
+# The specification below, will make sure that job is built by a Runner 
+# that has both ruby AND postgres tags defined.
+
+job:
+  tags:
+    - ruby
+    - postgres
+
+windows job:
+  stage:
+    - build
+  tags:
+    - windows
+  script:
+    - echo Hello, %USERNAME%!
+
+osx job:
+  stage:
+    - build
+  tags:
+    - osx
+  script:
+    - echo "Hello, $USER!"
