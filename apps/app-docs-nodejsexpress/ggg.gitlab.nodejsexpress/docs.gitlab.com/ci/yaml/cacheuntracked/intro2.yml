@@ -1,0 +1,7 @@
+# Cache all Git untracked files and files in binaries:
+rspec:
+  script: test
+  cache:
+    untracked: true
+    paths:
+      - binaries/

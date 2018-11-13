@@ -1,0 +1,6 @@
+# Send all Git untracked files:
+
+artifacts:
+  untracked: true
+
+ 

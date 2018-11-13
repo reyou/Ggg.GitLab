@@ -1,0 +1,6 @@
+# Set untracked: true to cache all files that 
+# are untracked in your Git repository:
+rspec:
+  script: test
+  cache:
+    untracked: true

@@ -1,0 +1,5 @@
+# To upload artifacts only when job fails:
+
+job:
+  artifacts:
+    when: on_failure

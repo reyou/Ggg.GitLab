@@ -1,0 +1,5 @@
+# To expire artifacts 1 week after being uploaded:
+job:
+  artifacts:
+    expire_in: 1 week
+
