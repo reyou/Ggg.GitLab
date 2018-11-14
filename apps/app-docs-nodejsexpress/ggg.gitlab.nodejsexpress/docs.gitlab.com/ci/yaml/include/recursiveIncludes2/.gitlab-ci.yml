@@ -1,0 +1,12 @@
+# Content of .gitlab-ci.yml
+
+include: 'https://company.com/autodevops-template.yml'
+
+stages:
+  - production
+
+production:
+  script:
+    - install_depedencies
+    - deploy
+    - notify_owner

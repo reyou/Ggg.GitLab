@@ -1,0 +1,2 @@
+variables:
+  DATABASE_URL: "postgres://postgres@postgres/my_database"

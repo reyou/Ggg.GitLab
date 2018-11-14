@@ -1,0 +1,7 @@
+# Content of .gitlab-ci.yml
+
+include: 'https://gitlab.com/awesome-project/raw/master/.before-script-template.yml'
+
+rspec:
+  script:
+    - bundle exec rspec

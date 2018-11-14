@@ -1,0 +1,2 @@
+  # Within the repository
+  include: '/templates/.gitlab-ci-template.yml'

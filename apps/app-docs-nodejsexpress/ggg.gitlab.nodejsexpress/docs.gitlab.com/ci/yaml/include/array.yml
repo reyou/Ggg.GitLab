@@ -1,0 +1,5 @@
+# Array
+
+include:
+  - 'https://gitlab.com/awesome-project/raw/master/.before-script-template.yml'
+  - '/templates/.after-script-template.yml'

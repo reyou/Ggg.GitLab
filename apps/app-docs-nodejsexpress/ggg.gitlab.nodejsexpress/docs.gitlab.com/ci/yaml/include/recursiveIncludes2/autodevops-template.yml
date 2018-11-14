@@ -1,0 +1,7 @@
+# Content of https://company.com/autodevops-template.yml
+
+production:
+  stage: production
+  script:
+    - install_dependencies
+    - deploy

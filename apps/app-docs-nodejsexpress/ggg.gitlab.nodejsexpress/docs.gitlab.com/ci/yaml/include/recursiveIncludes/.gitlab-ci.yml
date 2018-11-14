@@ -1,0 +1,22 @@
+# Content of .gitlab-ci.yml
+
+include: 'https://company.com/autodevops-template.yml'
+
+image: alpine:latest
+
+variables:
+  POSTGRES_USER: root
+  POSTGRES_PASSWORD: secure_password
+
+stages:
+  - build
+  - test
+  - production
+
+production:
+  script:
+    - install_dependencies
+    - deploy
+  environment:
+    name: production
+    url: https://domain.com
