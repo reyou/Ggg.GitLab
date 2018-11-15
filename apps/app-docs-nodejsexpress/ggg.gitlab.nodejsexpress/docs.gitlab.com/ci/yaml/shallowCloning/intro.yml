@@ -1,0 +1,2 @@
+variables:
+  GIT_DEPTH: "3"

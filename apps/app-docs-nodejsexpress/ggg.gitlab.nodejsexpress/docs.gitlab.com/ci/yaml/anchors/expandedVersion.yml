@@ -1,0 +1,21 @@
+.job_template:
+  image: ruby:2.1
+  services:
+    - postgres
+    - redis
+
+test1:
+  image: ruby:2.1
+  services:
+    - postgres
+    - redis
+  script:
+    - test1 project
+
+test2:
+  image: ruby:2.1
+  services:
+    - postgres
+    - redis
+  script:
+    - test2 project
